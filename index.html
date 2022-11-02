@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Assignment5</title>
+</head>
+  <style>
+    h4 {
+        font-size: large;
+
+    }
+    pre {
+        color: blue;
+    }
+  </style>
+<body>
+    <h1>#Array</h1>
+    <h4>Q.1 Find the Product.</h4>
+    <pre>
+        const Find_Prod = (array, N) => {
+            let result = 1;
+            for (let i = 0; i < N; i++)
+                result = result * array[i];
+            return result;
+        };
+    </pre>
+    <h4>Q.2 Find the Sum.</h4>
+    <pre>
+        const Find_Sum = (array, N) => {
+            let result = 0;
+            for (let i = 0; i < N; i++)
+                result = result + array[i];
+            return result;
+
+        };
+    </pre>
+    <h4>Q.3 Count Occurrences</h4>
+    <pre>
+        const findCount = (N, K, Arr) => {
+            let counter = 0;
+            for (let i = 0; i < Arr.length - 1; i++) {
+                if (Arr[i] === K) {
+                    counter++;
+                }
+            }
+            return counter;
+        };
+    </pre>
+    <h4>Q.4 Even Odd</h4>
+    <pre>
+        const findEvenOdd = (N, Arr) => {
+            let sumeven = 0;
+            let sumodd = 0;
+            for (let i = 0; i < N; i++) {
+                if (Arr[i] % 2 === 0) {
+                    sumeven += Arr[i];
+                }
+                else {
+                    sumodd += Arr[i];
+                }
+            }
+            return [sumeven, sumodd];
+        };
+    </pre>
+    <h4>Q.5 Find whether the number is present or not</h4>
+    <pre>
+        const Find_Num = (array, N, M) => {
+            if (array.indexOf(M) !== -1) {
+                return "YES";
+            }
+            else {
+                return "NO";
+            }
+        };
+    </pre>
+    <h4>Q.6 Higher Age</h4>
+    <pre>
+        const highAge = (N, Arr) => {
+            let B = [];
+            let totalarr = 0;
+            for (let i = 0; i < N; i++) {
+                if (Arr[i] >= 18) {
+                    B.push(Arr[i]);
+                }
+            }
+            return B;
+        };
+    </pre>
+    <h4>Q.7 Increment the Array Elements</h4>
+    <pre>
+        const Inc_Arr = (array, N) => {
+            let B = [];
+            for (let i = 0; i < N; i++) {
+                B.push(array[i] + 1);
+            }
+            console.log(B.join(' '));
+        };
+    </pre>
+    <h4>Q.8 Pass or Fail</h4>
+    <pre>
+        const isAllPass = (N, Arr) => {
+            Arr.sort();
+            for (let i = 0; i <= Arr.length; i++) {
+                if (Arr[i] >= 32) {
+                    return "YES";
+                }
+                else {
+                    return "NO";
+                }
+            }
+        };
+    </pre>
+    <h4>Q.9 Unique Color Shirt</h4>
+    <pre>
+        function Unique_Shirts(arr, N) {
+            let count = 0;
+            for (let i = 0; i < arr.length - 1; i++) {
+                let repeat = false;
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        arr[j] = 0;
+                        repeat = true;
+                    }
+                }
+                if (repeat) {
+                    arr[i] = 0;
+                }
+            }
+            for (let k = 0; k < arr.length; k++) {
+                if (arr[k] > 0)
+                    count = count + 1;
+            }
+            return count;
+        }
+    </pre>
+    <h4>Q.10 Min and Max</h4>
+    <pre>
+        function arrayMin(arr) {
+            let len = arr.length;
+            let min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                    min = arr[len];
+                }
+            }
+            return min;
+        }
+        function arrayMax(arr) {
+            let len = arr.length;
+            let max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                }
+            }
+            return max;
+        }
+    </pre>
+    <h4>Q.11 Birthday Game</h4>
+    <pre>
+        function Birthday_Game(arr, D, M) {
+            let counter = 0;
+            for (let i = 0; i < arr.length - 1; i++) {
+                let subArray = arr.slice(i, i + M);
+                if (subArray.length === M) {
+                    let sum = subArray.reduce((a, b) => a + b, 0);
+                    if (sum === D) {
+                        counter += 1;
+                    }
+                }
+            }
+            return counter;
+        }
+    </pre>
+</body>
+
+</html>
